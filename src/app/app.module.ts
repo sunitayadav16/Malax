@@ -13,7 +13,7 @@ import { HeaderComponent } from './shared/header/header.component';
 
 
 import {featureModule} from './features/feature.module';
-import { CoreModule} from './core/core.module';
+import {CoreModule} from './core/core.module';
 
 
 
