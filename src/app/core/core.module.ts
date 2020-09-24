@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
-// import {CoreRoutingModule } from './core-routing.module';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CoreRoutingModule } from '../core/core-routing.module';
 
-
+import { LoginComponent } from './Auth/login/login.component';
+import { SignupComponent } from './Auth/signup/signup.component';
+import { AuthComponent } from '../core/Auth/auth.component';
 @NgModule({
-    
-    declarations: [ ],
-
-    imports: [
-    //   CoreRoutingModule  
+    declarations:[
+        LoginComponent,
+        SignupComponent,
+        AuthComponent
     ],
-
-    providers: [],
-
+    imports:[
+        RouterModule,
+        CommonModule,
+        ReactiveFormsModule,
+        CoreRoutingModule
+    ],
+    exports:[
+        LoginComponent,
+        SignupComponent,
+    ]
 })
-export class CoreModule{
+export class CoreModule {
 
 }
