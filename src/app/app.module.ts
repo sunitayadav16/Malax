@@ -9,6 +9,13 @@ import { ClientComponent } from './features/modules/client/client.component';
 import { TherapistComponent } from './features/modules/therapist/therapist.component';
 import { AdminComponent } from './features/modules/admin/admin.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import {featureModule} from './features/feature.module';
+import { CoreModule} from './core/core.module';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -24,7 +31,11 @@ import { HeaderComponent } from './shared/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgbModule,
+    featureModule, CoreModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
