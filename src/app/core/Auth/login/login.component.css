@@ -1,0 +1,98 @@
+/* ---login form----- */
+.section-title{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-title h2{
+    position: relative;
+    text-align: center;
+    color: #2F3044;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.section-title p {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 12px;
+    color: #2F3044;
+}
+.section-title a{
+    color: #3699FF;
+    cursor: pointer;
+}
+
+.section-fields{
+    padding-left: 90px;
+    padding-bottom: 10px;
+}
+.section-fields label{
+    font-weight: 600;
+    font-size: 14px;
+    color: #2F3044;
+}
+.section-fields input{
+    background: #EEF1F5;
+    border-radius: 12px;
+    height: 50px;
+}
+
+.section-field-btn{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    
+}
+
+/* .section-field-btn ul{
+    list-style: none;
+    display: flex;
+    margin-left: 10px;
+}
+.section-field-btn li{
+    padding-left: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+} */
+
+/* background image */
+
+.back-image{
+    background-image: url('../../../../assets/images/new-login.jpg');  
+    height: 577px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   
+}
+
+.back-image-overlay{
+     background-color: rgba(63, 63, 63, 0.418); 
+    height: 577px;
+}
+
+/* logo */
+.logo{
+    padding-top: 90px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.logo img{
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 7px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.logo p {
+    padding-top: 30px;
+    text-align: center;
+    color: #ebebeb;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 167.5%;
+}
