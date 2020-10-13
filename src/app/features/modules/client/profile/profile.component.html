@@ -1,0 +1,456 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Client Module </h2>
+      <br>
+      <span class ="example-spacer"></span>
+      <!-- <button type ="button" class =".example-spacer btn btn-primary "
+      routerLink ="sr" disabled >Schdule A New Service</button> -->
+     <!-- <hr>
+     <br> -->
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+        <div class ="">
+          <mat-tab-group >
+            <mat-tab label="Personal Information"> 
+                <br>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus sed turpis cras quam ac tortor 
+                   tempus amet. Dolor eget enim ultrices dictum tempor pharetra. Id montes, non mattis viverra. Vel
+                    nibh arcu venenatis leo quis nunc, tempus maecenas enim. </p>
+                 </div>
+                 <br><br>
+                 <div class="container">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <!-- <p>
+                                Form Status: {{ sr.status }} 
+                            </p> -->
+                           <form [formGroup]="firstForm" (ngSubmit)="onSubmit()">
+                               <div class ="form-group">
+                                <label>Firstname</label><br>
+                                <input type ="text" class ="form-control" FormControlName ="firstname" required>
+                               </div>
+                               <div class ="form-group">
+                                <label>Lastname</label><br>
+                                <input type ="text" class ="form-control" FormControlName ="lastname"required>
+                               </div>
+                               <div class ="form-group">
+                                  <label>Gender</label><br>
+                                   <select class ="form-control" formControlName ="gender">
+                                       <option value=""></option>
+                                       <option *ngFor="let gender of gender" [ngValue]="gender"></option>
+                                   </select>
+                               </div>
+                               <div class ="form-group">
+                                <label>Birth Date</label><br>
+                                <input type ="date" class ="form-control" FormControlName ="birthdate" required>
+                               </div>
+                               <br><br>
+                               <div class ="float-right p-2">
+                                   <button  type ="button" class ="btn btn-light" 
+                                    routerLink ="../pf">Cancel</button>&nbsp;
+                                   <button [disabled]="!firstForm.valid" type ="submit" class ="btn btn-info colbtn">Next</button>
+                               </div>
+                            </form>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                 </div>  
+            </mat-tab>
+            <mat-tab label="Medical History">
+                <br>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus sed turpis cras quam ac tortor 
+                   tempus amet. Dolor eget enim ultrices dictum tempor pharetra. Id montes, non mattis viverra. Vel
+                    nibh arcu venenatis leo quis nunc, tempus maecenas enim. </p>
+                 </div>
+                 <br><br>
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-md-2"></div>
+                         <div class="col-md-8">
+                            <form>
+                                <h5>Emergency Contact </h5> 
+                                <div class ="form-group">
+                                 <label>Name</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div>
+                             <div class ="form-group">
+                                 <label>Phone Number</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div> <br>
+                             <h5> Physician Contact </h5> 
+                             <div class ="form-group">
+                                 <label>Name</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div>
+                             <div class ="form-group">
+                                 <label>Phone Number</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div>
+                             <div class ="form-group">
+                                 <label>Current Medications</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div>
+                             <div class ="form-group">
+                                 <label>Surguries</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div>
+                             <div class ="form-group">
+                                 <label>Hobbies</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div>
+                             <div class ="form-group">
+                                 <label>Dislocation</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div>
+                             <div class ="form-group">
+                                 <label>Profession</label><br>
+                                 <input type ="text" class ="form-control">
+                             </div>
+                             <br><br>
+                             <div class ="float-right p-2">
+                                <button  type ="button" class ="btn btn-light" 
+                                 routerLink ="./pf">Cancel</button>&nbsp;
+                                <button  type ="submit" 
+                                  class ="btn btn-info colbtn">Save</button>
+                            </div>
+                         </form> 
+                         </div>
+                         <div class="col-md-2"></div>
+                     </div>
+                 </div>
+            </mat-tab>
+            <mat-tab label="Medical Conditions">
+                <br>
+              <div>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus sed turpis cras quam ac tortor 
+                tempus amet. Dolor eget enim ultrices dictum tempor pharetra. Id montes, non mattis viverra. Vel
+                 nibh arcu venenatis leo quis nunc, tempus maecenas enim. </p>
+              </div>
+              <br><br>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-1"></div>
+                      <div class="col-md-10">
+                         <form>
+                            <div class="row box">
+                                <div class="col-md-2">
+                                  <div class ="form-group">
+                                     <input type ="checkbox" checked> Arthritis
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Low-blood Pressure
+                                  </div> 
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Seizures /convulsion
+                                  </div> 
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Vericose veins
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> None of the above
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                 <div class ="form-group">
+                                    <input type ="checkbox"> Bursitis
+                                 </div> <br> 
+                                 <div class ="form-group">
+                                    <input type ="checkbox"> Warts
+                                 </div>  <br>
+                                 <div class ="form-group"> 
+                                    <input type ="checkbox"> Heart conditions
+                                 </div> <br>
+                                 <div class ="form-group">
+                                    <input type ="checkbox"> Cancer
+                                 </div>
+                               </div>
+                                <div class="col-md-2">
+                                 <div class ="form-group">
+                                     <input type ="checkbox"> Headaches
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Poor circulations
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Constipation
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Skin conditions
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                 <div class ="form-group">
+                                     <input type ="checkbox"> Swollen joints
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Anemia
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Siuns / alleries
+                                  </div><br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Pregnent
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                 <div class ="form-group">
+                                     <input type ="checkbox"> Fibromyalgia
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Stroke
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Hemotomas
+                                  </div><br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Menstural Pain
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                 <div class ="form-group">
+                                     <input type ="checkbox"> High blood Pressure
+                                  </div>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Chest Pain
+                                  </div>  <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Phlebitis
+                                  </div> <br>
+                                  <div class ="form-group">
+                                     <input type ="checkbox"> Athletes foot
+                                  </div>
+                                </div>
+                            </div>
+                            <label class ="label"> &nbsp;Area of pain, injuries, tension restricted movements</label>
+                            <div class="row box">
+                                <div class="col-md-2">
+                                    <div class ="form-group">
+                                        <input type ="checkbox" checked> Head/Neck
+                                     </div><br>
+                                     <div class ="form-group">
+                                        <input type ="checkbox"> Chest
+                                     </div>  <br>
+                                     <div class ="form-group">
+                                        <input type ="checkbox"> Feet
+                                     </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class ="form-group">
+                                        <input type ="checkbox"> Arms
+                                     </div> <br>
+                                     <div class ="form-group">
+                                        <input type ="checkbox"> Back
+                                     </div>  <br>
+                                     <div class ="form-group">
+                                        <input type ="checkbox"> None of the above
+                                     </div> 
+                                </div>
+                                <div class="col-md-2">
+                                    <div class ="form-group">
+                                        <input type ="checkbox"> Shoulder
+                                     </div>  <br>
+                                     <div class ="form-group">
+                                        <input type ="checkbox"> Hips
+                                     </div> 
+                                </div>
+                                <div class="col-md-2">
+                                    <div class ="form-group">
+                                        <input type ="checkbox"> Elbows
+                                     </div>  <br>
+                                     <div class ="form-group">
+                                        <input type ="checkbox"> Legs
+                                     </div> 
+                                </div>
+                                <div class="col-md-2">
+                                    <div class ="form-group">
+                                        <input type ="checkbox"> Wrists
+                                     </div>  <br>
+                                     <div class ="form-group">
+                                        <input type ="checkbox"> Knees
+                                     </div> 
+                                </div>
+                                <div class="col-md-2">
+                                    <div class ="form-group">
+                                        <input type ="checkbox"> Hands
+                                     </div>  <br>
+                                     <div class ="form-group">
+                                        <input type ="checkbox"> Ankels
+                                     </div> 
+                                </div> 
+                            </div> 
+                            <br>
+                            <div class ="form-group">
+                                <label class ="label">Any other health concern</label><br>
+                                <textarea type="text" rows="4" class="form-control"></textarea>
+                            </div> 
+                            <br><br>
+                            <div class ="float-right bottom-row ">
+                                <button class ="btn btn-light" >Cancel</button>&nbsp;
+                                <button class ="btn btn-info">Save</button>
+                            </div>
+                         </form> 
+                      </div>
+                      <div class="col-md-1"></div>
+                  </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Massage Preferences">
+                <br>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus sed turpis cras quam ac tortor 
+                   tempus amet. Dolor eget enim ultrices dictum tempor pharetra. Id montes, non mattis viverra. Vel
+                    nibh arcu venenatis leo quis nunc, tempus maecenas enim. </p>
+                 </div>
+                 <br><br>
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-md-1"></div>
+                         <div class="col-md-10">
+                             <form>
+                                <label class ="label">Type Prefered</label>
+                                <div class="row box">
+                                    <div class="col-md-2">
+                                        <div class ="form-group">
+                                            <input type ="checkbox" checked> Relaxation
+                                         </div> <br>
+                                         <div class ="form-group">
+                                            <input type ="checkbox"> Sports
+                                         </div> 
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class ="form-group">
+                                            <input type ="checkbox"> Sleep
+                                         </div>   
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class ="form-group">
+                                            <input type ="checkbox"> Senior
+                                         </div> 
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class ="form-group">
+                                            <input type ="checkbox"> Therapeutic
+                                         </div> 
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class ="form-group">
+                                            <input type ="checkbox"> Pregnency
+                                         </div> 
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class ="form-group">
+                                            <input type ="checkbox"> Deep Tissus
+                                         </div> 
+                                    </div>
+                                </div> 
+                                <br>
+                                <div class ="form-group">
+                                    <label class ="label">Therapist Gender Perference</label><br>
+                                    <select class ="form-control">
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+                                <div class ="form-group">
+                                    <label class ="label">Frequency</label><br>
+                                    <select class ="form-control">
+                                       <option>Daily</option>
+                                       <option>Weekly</option>
+                                       <option>Bi-weekly</option>
+                                       <option>Every Few months</option>
+                                       <option>Less Often</option>
+                                   </select>
+                                </div>
+                                <div class ="form-group">
+                                    <label class ="label">Goals</label><br>
+                                    <textarea type ="text" rows ="4" class ="form-control"></textarea>
+                                </div>
+                                <div class ="form-group">
+                                    <label class ="label">General information for Therapist</label><br>
+                                    <textarea type ="text" rows ="3" class ="form-control"></textarea>
+                                </div>
+                                <div class ="float-right">
+                                    <button class ="btn btn-light">Cancel</button>&nbsp;
+                                    <button class ="btn btn-info">Save</button>
+                                </div>
+                             </form>
+                         </div>
+                         <div class="col-md-1"></div>
+                     </div>
+                 </div>
+            </mat-tab>
+            <mat-tab label="Location"> 
+                <br>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tempus sed turpis cras quam ac tortor 
+                   tempus amet. Dolor eget enim ultrices dictum tempor pharetra. Id montes, non mattis viverra. Vel
+                    nibh arcu venenatis leo quis nunc, tempus maecenas enim. </p>
+                 </div>
+                 <br><br>
+                 <div class="container">
+                     <div class="row">
+                         <div class="col-md-1"></div>
+                         <div class="col-md-10">
+                            <form>
+                            <div>
+                                <label class ="label"> Where will you be receiving massages?</label>
+                                <div class="row box">
+                                    <div class="col-md-2">
+                                        <input type ="radio" name ="location" checked> In home
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type ="radio" name ="location"> At work
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type ="radio" name ="location"> Other
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <div>
+                                    <label class="label">Space availble confirmation</label><br>
+                                    <div class="row">
+                                            <div class="col-md-2">
+                                                <input type ="radio" name ="space" checked> Yes
+                                            </div>
+                                            <div class="col-md-2">
+                                                <input type ="radio" name ="space"  > No
+                                            </div>  
+                                    </div> 
+                                </div>
+                                <br><br>
+                                <div>
+                                    <label class="label">Presence of Pets</label><br>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <input type ="radio" name ="pets" checked> Yes
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type ="radio" name ="pets" > No
+                                        </div>
+                                    </div>  
+                                </div><br><br>
+                                <div class ="float-right">
+                                    <button class ="btn btn-light" >Cancel</button>&nbsp;
+                                    <button class ="btn btn-info">Submit</button>
+                                </div> 
+                            </div>    
+                            </form> 
+                         </div>
+                         <div class="col-md-1"></div>
+                     </div>
+                 </div>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+  </div><br><br>
+</div>

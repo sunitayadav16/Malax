@@ -1,0 +1,124 @@
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h2>Service Request</h2>
+        <br>
+        <hr>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+     <br>
+     <div class="row">
+         <div class="col-md-2"></div>
+         <div class="col-md-8">
+            <p>
+             <!-- Form Status: {{ sr.status }}  -->
+            </p>
+              <form [formGroup]="sr" (ngSubmit)="onSubmit()">
+                <div class ="form-group" >
+                    <label>Date</label><br>
+                    <!-- <mat-form-field class="example-full-width">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [min]="minDate" [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field> -->
+                    <input type ="date" class ="form-control" formControlName="date" placeholder="mm-dd-yyyy" required>
+                </div>
+                 <div formGroupName ="timeRange">
+                    <div class ="form-group" >
+                        <label>Time Range</label><br>
+                        <div class="row">
+                           <div class="col-md-6">
+                               <input type ="time" class ="form-control" 
+                               formControlName="startTime" placeholder="Start Time" >
+                           </div>
+                           <div class="col-md-6">
+                               <input type ="time" class ="form-control" 
+                               placeholder="End Time"
+                               formControlName="endTime">
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class ="form-group">
+                    <label>Time Length</label><br>
+                    <select class ="form-control" formControlName="timeLength">
+                        <option value=""></option>
+                        <option *ngFor="let timeLength of timeLength" [ngValue]="timeLength">{{timeLength}}</option>
+                    </select>
+                </div> 
+
+                <div class ="form-group">
+                   <label>Type of Massage</label><br>
+                   <select class ="form-control"  formControlName="typeOfMassage">
+                       <option value =""></option>
+                       <option *ngFor="let typeOfMassage of typeOfMassage" [ngValue]="typeOfMassage" >{{typeOfMassage}}</option>
+                   </select>
+                </div>
+              
+               <div class ="form-group">
+                   <label>Therapist Gender Preference</label><br>
+                   <select class ="form-control" formControlName="therapistGenderPreference">
+                       <option value =""></option> 
+                       <option *ngFor ="let therapistGenderPreference of therapistGenderPreference"
+                          [ngValue] ="therapistGenderPreference">{{therapistGenderPreference}}</option>
+                   </select>
+                </div>
+                  <div class ="form-group">
+                   <label>General Location</label><br>
+                   <select class ="form-control" >
+                       <option></option>
+                       <option></option>
+                       <option> Other </option>
+                   </select>
+                </div>
+                <div class ="form-group">
+                   <label>Street Location</label><br>
+                   <textarea type ="text" class ="form-control" 
+                   formControlName ="textarea" rows ="3"  required ></textarea> 
+               </div>
+             <div formGroupName ="address">
+                <div class ="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                         <label>City </label>
+                            <input type ="text" class ="form-control" formControlName ="city" placeholder="City">
+                        </div>
+                        <div class="col-md-4">
+                          <label>State</label>
+                            <input type ="text" class ="form-control" formControlName ="state" placeholder="State" >
+                        </div>
+                        <div class="col-md-4">
+                          <label>ZIP Code</label>
+                         <input type ="text" class ="form-control" formControlName ="zipcode" placeholder="Zip Code">
+                     </div>
+                    </div>
+                 </div>
+               </div>
+               <div class ="form-group">
+                   <label>Location</label><br>
+                   <select class ="form-control" formControlName ="location" >
+                       <option value =""></option>
+                       <option *ngFor ="let location of location"
+                       [ngValue] ="location">{{location}}</option>
+                   </select>
+               </div> <br>
+               <div class ="form-group">
+                <input type ='checkbox'  formControlName="" required>
+                Information from your profile will be used to screen qualified therapists. Please check the box to confirm that your profile information is correct and can be shared with potential therapists.
+               </div> 
+               <br><br> 
+                <div class ="float-right">
+                   <button type ="submit" class ="btn btn-primary" [disabled]="!sr.valid"
+                   routerLink ="../pay">Request Appointment</button>&nbsp; 
+                   <button type ="button" class ="btn btn-light" (click) ="onCancel()" >Cancel</button>
+               </div>
+             </form>
+         </div>
+         <div class="col-md-2"></div>
+     </div>
+</div>
+
