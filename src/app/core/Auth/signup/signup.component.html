@@ -20,39 +20,80 @@
                 <div class="section-title">
                     <h2>Welcome to Malax</h2>
                     <p> Already Registered?
-                        <a>Click here to login</a>
+                        <a routerLink="/login">Click here to login</a>
                     </p>
                 </div>
-            
+                <div class="module-btn">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <button class="btn btn-primary" (click)="onChangeModule('client')">SignUp as a Client</button>&nbsp;
+                            <button class="btn btn-primary" (click)="onChangeModule('therapist')">SignUp as a Therapist</button>
+                        </div>
+                    </div>
+                </div>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" >
                 <div class="section-fields">
                     <div class="row">
                         <div class="col-sm-10">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="text" class="form-control" maxlength="31">
+                                <input type="text" class="form-control" maxlength="31" formControlName="email">
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="help-block"
+                    *ngIf=" !signupForm.get('email').valid && signupForm.get('email').touched">
+                            <div *ngIf="signupForm.get('email').errors.required">
+                                <p><i class="fas fa-exclamation-circle"></i> You need to enter your email.</p>
+                            </div>
+                            <div *ngIf="signupForm.get('email').errors.email">
+                                <p><i class="fas fa-exclamation-circle"></i> This email is invalid. Make sure it's written like example@email.com</p>
+                            </div>
+                            <div *ngIf="signupForm.get('email').errors.maxlength">
+                                <p><i class="fas fa-exclamation-circle"></i> max character is 30</p>
+                            </div>
+                        </div>
                     
 
                     <div class="row">
                         <div class="col-sm-10">
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control">
+                                <input type="password" class="form-control"
+                                formControlName="password">
                             </div>
                         </div>
                     </div>
+                    <div class="help-block"
+                    *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+                    <div *ngIf="signupForm.get('password').errors.required">
+                        <p><i class="fas fa-exclamation-circle"></i> You need to enter a password.</p>
+                    </div>
+                    <div *ngIf="signupForm.get('password').errors.minlength">
+                        <p><i class="fas fa-exclamation-circle"></i> min character is 6</p>
+                    </div>
+                </div>
                   
 
                     <div class="row">
                         <div class="col-sm-10">
                             <div class="form-group">
                                 <label for="password-confirmation">Password Confirmation</label>
-                                <input type="password" class="form-control" >
+                                <input type="password" class="form-control" 
+                                formControlName="confirmPassword">
                             </div>
                         </div>
                     </div>
+                    <div class="help-block"
+                    *ngIf=" !signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched">
+                    <div *ngIf="signupForm.get('confirmPassword').errors.required">
+                        <p><i class="fas fa-exclamation-circle"></i> You need to enter a confirm password</p>
+                    </div>
+                    <div *ngIf="signupForm.get('confirmPassword').errors.mustMatch">
+                        <p><i class="fas fa-exclamation-circle"></i> Password must be match</p>
+                    </div>
+                </div>
 
                     
 
@@ -60,10 +101,23 @@
                         <div class="col-sm-10">
                             <div class="form-group">
                                 <label for="first-name">First Name</label>
-                                <input type="text" class="form-control" maxlength="31" >
+                                <input type="text" class="form-control" maxlength="31" 
+                                formControlName="firstName">
                             </div>
                         </div>
                     </div>
+                    <div class="help-block" 
+                    *ngIf=" !signupForm.get('firstName').valid && signupForm.get('firstName').touched">
+                    <div *ngIf="signupForm.get('firstName').errors.required">
+                        <p><i class="fas fa-exclamation-circle"></i> Enter a Firstname for your profile.</p>
+                    </div>
+                    <div *ngIf="signupForm.get('firstName').errors.minlength">
+                        <p><i class="fas fa-exclamation-circle"></i> Min character is 3</p>
+                    </div>
+                    <div *ngIf="signupForm.get('firstName').errors.maxlength">
+                        <p><i class="fas fa-exclamation-circle"></i> Mix character is 30</p>
+                    </div>
+                </div>
 
                     
 
@@ -72,45 +126,76 @@
                             <div class="form-group">
                                 <label for="last-name">last Name</label>
                                 <input type="text" class="form-control" maxlength="31"
-                                >
+                                formControlName="lastName">
                             </div>
                         </div>
                     </div>
+                    <div class="help-block" 
+                    *ngIf=" !signupForm.get('lastName').valid && signupForm.get('lastName').touched">
+                    <div *ngIf="signupForm.get('lastName').errors.required">
+                        <p><i class="fas fa-exclamation-circle"></i> Enter a lastname for your profile.</p>
+                    </div>
+                    <div *ngIf="signupForm.get('lastName').errors.minlength">
+                        <p><i class="fas fa-exclamation-circle"></i> Min character is 3</p>
+                    </div>
+                    <div *ngIf="signupForm.get('lastName').errors.maxlength">
+                        <p><i class="fas fa-exclamation-circle"></i> Max character is 30</p>
+                    </div>
+                </div>
 
-                   
+                    <div class="row" *ngIf="allowClientModule">
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <label for="market">ZipCode</label>
+                                <input type="number" class="form-control"
+                                formControlName="zipcode">
+                            </div>
+                            <div class="help-block"
+                                *ngIf=" !signupForm.get('zipcode').valid && signupForm.get('zipcode').touched">
+                                <p><i class="fas fa-exclamation-circle"></i> enter your zipcode</p>
+                                </div>
+                        </div>
+                    </div>
 
-                    <div class="row">
+                    <div class="row" *ngIf="allowTherapistModule">
                         <div class="col-sm-10">
                             <div class="form-group">
                                 <label for="market">Market</label>
                                 <select class="form-control" 
-                                >
+                                (change)="onChange($event.target.value)"
+                                formControlName="market">
                                     <option value="Billings,MT">Billings, MT</option>
                                     <option>Other</option>
                                 </select>
+                                <div *ngIf="allowOtherOption"> 
+                                    <p>
+                                        Malax is not yet available in your area. You can submit this form, 
+                                        and we will be happy to notify you when Malax is available in your ZIP code.
+                                        </p>
+                                    </div>
+                                <div class="help-block"
+                                *ngIf=" !signupForm.get('market').valid && signupForm.get('market').touched">
+                                <p><i class="fas fa-exclamation-circle"></i> Select Your Market</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <span > 
-                        <p>
-                            Malax is not yet available in your area. You can submit this form, 
-                            and we will be happy to notify you when Malax is available in your ZIP code.
-                            </p>
-                    </span>
+                    
+                   
                    
 
                     <div class="row">
-                        <div class="col-sm-4 offset-sm-4">
+                        <div class="col-sm-5 offset-sm-3">
                             <div class="form-group">
                                 <div class="section-field-btn">
-                                <button type="button"  class="btn btn-primary">Register</button>
+                                <button type="submit" class="btn btn-primary">Register as a Client</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                </div>
-
+            </form>
             
             </div>
         </div>

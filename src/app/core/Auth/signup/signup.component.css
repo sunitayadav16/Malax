@@ -1,0 +1,111 @@
+.module-btn
+{
+    text-align: center;
+}
+
+/* validation  */
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.help-block p{
+    color: red;
+    padding: 0;  
+} 
+/* ---------------back image------------- */
+.back-image{
+    /* background-image: url('../../../../assets/images/new-signup.jpg');  
+    height: 857px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+
+    background-image: url('../../../../assets/images/new-signup.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: 100vh;
+   
+}
+
+/* .back-image-overlay{
+     background-color: rgba(63, 63, 63, 0.418); 
+    height: 577px;
+} */
+/* ---------------logo------------------- */
+.logo{
+    padding-top: 90px;
+    padding-bottom: 50px;
+    text-align: center;
+    
+}
+.logo img{
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 7px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.logo p {
+    padding-top: 30px;
+    text-align: center;
+    color: #ebebeb;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 167.5%;
+}
+
+/* ----------------signup form --------------------*/
+.section-title{
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.section-title h2{
+    position: relative;
+    text-align: center;
+    color: #2F3044;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.section-title p {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+    color: #2F3044;
+}
+.section-title a{
+    color: #3699FF;
+}
+
+.section-fields{
+    padding-left: 90px;
+    padding-bottom: 20px;
+}
+.section-fields label{
+    font-weight: 600;
+    font-size: 14px;
+    color: #2F3044;
+}
+.section-fields input{
+    background: #EEF1F5;
+    border-radius: 12px;
+    height: 50px;
+}
+.section-fields select{
+    background: #EEF1F5;
+    border-radius: 12px;
+    height: 50px;
+}
+.section-fields option{
+    border-radius: 12px;
+}
+
+.section-field-btn{
+    margin-top: 25px;
+    margin-bottom: 30px;    
+}

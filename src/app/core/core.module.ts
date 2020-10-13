@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CoreRoutingModule } from '../core/core-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { LoginComponent } from './Auth/login/login.component';
 import { SignupComponent } from './Auth/signup/signup.component';
-import { AuthComponent } from '../core/Auth/auth.component';
+import { AuthComponent } from './Auth/auth.component'; 
+
+
 @NgModule({
     declarations:[
         LoginComponent,
@@ -16,14 +18,14 @@ import { AuthComponent } from '../core/Auth/auth.component';
     imports:[
         RouterModule,
         CommonModule,
-        ReactiveFormsModule,
-        CoreRoutingModule
+        FormsModule,
+        ReactiveFormsModule        
     ],
     exports:[
-        LoginComponent,
-        SignupComponent,
+        
     ]
 })
+
 export class CoreModule {
 
 }

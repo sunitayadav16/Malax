@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Upload Photo ID</h1>
+<div mat-dialog-content>
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="modal-text">
+            <p>Please upload a current photo. This photo will be shared
+               with your clients so the can identify you when you arrive</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="upload-photo">
+              <label for="add-photo" title="choose Image">
+                <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+              </label>
+              <input type="file" class="form-control" >
+                  <p>Drag and drop image here</p>
+          </div>
+        </div>
+    </div>
+
+</div>
+<div mat-dialog-actions>
+  
+  <div class="d-flex flex-row-reverse bd-highlight">
+    <div class="p-2 bd-highlight">
+        <button class="btn btn-sm btn-primary" >Upload Image form computer</button>
+    </div>
+    <div class="p-2 bd-highlight">
+        <button class="btn btn-sm btn-light" mat-button mat-dialog-close>Cancel</button>
+    </div>
+  </div>
+
+</div>
