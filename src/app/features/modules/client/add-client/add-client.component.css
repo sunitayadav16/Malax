@@ -1,0 +1,72 @@
+.clientProfile{
+    /* font-size:23px;
+    margin:25px; */
+    /* margin-left:10px; */
+    padding:10px;
+}
+
+.client-header{
+  margin:0
+}
+.servicebtn{
+  color:white;
+  background-color: #3699FF;
+}
+
+.content-box{
+  margin:30px;
+  /* padding:10px; */
+}
+.profile-details{
+    margin:20px;
+    margin-bottom:-20px;
+    padding:5px; 
+}
+
+button{
+  background-color:#3699ff;
+  color:white;
+  text-decoration:none;
+}
+
+button :hover{
+  color:white;
+}
+.tab{
+  display:flex;
+  margin-top:20px;
+  margin-bottom:15px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.linkbtn{
+  text-decoration-style: none;
+  color: rgba(47, 48, 68, 0.5);
+  cursor: pointer; 
+}
+
+p{
+  color: rgba(47, 48, 68, 0.5);
+  font-size:18px;
+  margin-left:35px;
+  /* line-height:2; */
+  /* list-style: height 1px; */
+}
+
+a{
+  font-size: 18px;
+  color:rgb(47, 48, 68, 0.5);
+  text-decoration: underline;
+  line-height: 2.5;
+}
+i{
+   color:#3699FF;
+   padding:8px;
+}
+
+a:hover{
+  color: #3699FF;
+}

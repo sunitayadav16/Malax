@@ -1,0 +1,82 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>
+        Client Module
+      </h2>
+      <!-- <br> -->
+      <span class ="example-spacer"></span>
+      <!-- <button type ="button" class ="btn btn-primary "
+      routerLink ="sr" disabled >Schdule A New Service</button> -->
+      <!-- <hr> -->
+    </div>
+  </div>
+</div>
+
+<div class="container content-box">
+    <div class="row">
+      <div class="col profile-details">
+        <div class ="">
+         <h5><i class ="fa fa-envelope"></i>Email Address Confirmation</h5>
+          <p>Setup your email details</p>
+        </div><br>
+        <div>
+          <h5><i class ="fa fa-phone-square"></i>Telephone number Confirmation</h5>
+          <p>Confirm your phone number</p>
+        </div><br>
+        <div>
+         <h5><i class ="fas fa-user"></i>Client Profile</h5>
+          <p>Setup your profile</p>
+        </div><br>
+        <div>
+          <h5><i class ="fa fa-address-card"></i>Identity Verification</h5>
+          <p>Verify your identity</p>
+        </div><br>
+        <div>
+          <h5><i class ="fas fa-file-alt"></i>Consent Form</h5>
+          <p>Setup your consent details</p>
+        </div><br>
+        <div>
+          <h5><i class ="fa fa-user-circle"></i>Profile Approval</h5>
+          <p>An administrator needs to approve your profile</p>
+        </div>
+      </div>
+      <div class="col profile-details ">
+        <div>
+          <p> client@aol.com</p>
+        </div><br><br><br>
+        <div>
+          <p>Not yet confirmed</p>
+        </div><br><br><br>
+        <div>
+          <p>Not yet completed</p>
+        </div><br><br><br>
+        <div>
+          <p>Not yet uploaded</p>
+        </div><br><br><br>
+        <div>
+          <p>Not yet approved</p>
+        </div>
+      </div>
+      <div class="col profile-details">
+        <div>
+          <a class ="linkbtn"  (click)="updateEmail()">Update your email</a>
+        </div><br><br><br>
+        <div class ="">
+         <a class ="linkbtn"  (click)="updatePhone()">Update your phone </a>
+        </div><br><br><br>
+        <div class ="">
+         <a class ="linkbtn"  (click)="onProfile()" routerLink ="../cp"> Update your profile</a>
+        </div> <br><br>
+        <div class ="">
+         <a class ="linkbtn"  (click)="updatePhoto()">Upload current photo</a><br>
+         <a class ="linkbtn"  (click)="updateIdPhoto()">Update Id photo</a>
+        </div><br>
+        <div class ="">
+         <a class ="linkbtn"  (click)="consentForm()">Malax Consent Form</a><br>
+         <a class ="linkbtn"  (click)="malaxAgreementForm()">Malax Customer Agreement Form </a>
+        </div>
+      </div>
+    </div>
+  </div>
